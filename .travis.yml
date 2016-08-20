@@ -12,5 +12,5 @@ env:
 install: "pip install -U pip setuptools"
 
 script:
-  - pip uninstall numpy
+  - pip uninstall --yes numpy
   - pip install numpy==$NUMPY_VERSION
