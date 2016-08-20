@@ -12,6 +12,8 @@ env:
 install: "pip install -U pip setuptools"
 
 script:
+  - echo 'Relevant package versions:'
+  - pip list 2>/dev/null | grep -E '^(setuptools|pip) '
   - pip uninstall --yes numpy
   - python -c "exec '''import os\nfrom distutils import sysconfig\nopen(os.path.join(sysconfig.get_python_lib(), '_manylinux.py'), 'w').write('manylinux1_compatible = False')'''"
   - pip install numpy==$NUMPY_VERSION
