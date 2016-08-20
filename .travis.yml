@@ -13,4 +13,5 @@ install: "pip install -U pip setuptools"
 
 script:
   - pip uninstall --yes numpy
+  - echo "manylinux1_compatible = False" > _manylinux.py
   - pip install numpy==$NUMPY_VERSION
